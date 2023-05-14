@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<title>ScoreTracker</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="/css/opensans-font.css">
+	<link rel="stylesheet" type="text/css" href="/css/roboto-font.css">
+	<link rel="stylesheet" type="text/css" href="/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<!-- datepicker -->
+	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.min.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link rel="shortcut icon" href="#">
+  </head>
+
+<body>
+  <body class="unselectable">
+    <div class="page-content" style="background-image: url('/images/wizard-v4.jpg')">
+      <div class="wizard-v4-content">
+        <div class="wizard-form">
+          <div class="wizard-header">
+            <h3 class="heading">Score Tracker Solution</h3>
+            <p>Fill the section you prefer</p>
+          </div>
+          <iframe name="hiddenFrame" id="hiddenFrame" style="display: none;"></iframe>
+              <form id="taskmeeting" class="form-register" action="/form" method="post" target="hiddenFrame">
+                <div id="form-total">
+                  <!-- SECTION 1 -->
+                    <h2>
+                      <span class="step-icon"><i class="zmdi zmdi-account"></i></span>
+                      <span class="step-text">Meeting</span>
+                    </h2>
+                    <section>
+                        <div class="inner">
+                          <h3>Concentrate the mind on the present moment.</h3>
+
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <select name="username1" id="username1">
+                        <option value="Username" disabled selected>Username</option>
+                        <% for (let i=2; i<names.length; i++) {%>
+                          <option value= <%= tags[i] %> > <%= names[i][0] %> </option>
+                        <%}%>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <select name="position1" id="position1">
+                        <option value="Position" disabled selected>Position</option>
+                        <option value="MM">Media Member</option>
+                        <option value="SM">Sponsoring Member</option>
+                        <option value="TM">Training Member</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <select name="categoryM" id="categoryM">
+                        <option value="Category" disabled selected>Category</option>
+                        <option value="GM">General Meeting</option>
+                        <option value="TM">Team Meeting</option>
+                        <option value="TS">Training Session</option>
+                        <option value="GA">General Assembly</option>
+                        <option value="ID">Integration Day</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <select name="presence" id="presence">
+                        <option value="Presence" disabled selected>Presence</option>
+                        <option value="T">True</option>
+                        <option value="F">False</option>
+                      </select>
+                    </div>
+                    <div class="form-holder form-holder-2">
+                      <select name="justification" id="justification">
+                        <option value="Justification" disabled selected>Justification</option>
+                        <option value="T">True</option>
+                        <option value="F">False</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <select name="style1" id="style1">
+                        <option value="Style" disabled selected>Style</option>
+                        <option value="T">True</option>
+                        <option value="F">False</option>
+                      </select>
+                    </div>
+                    <div class="form-holder">
+                      <label class="form-row-inner">
+                        <input type="text" class="form-control" id="styleD1" name="styleD1" required>
+                        <span class="label">Style Description</span>
+                          <span class="border"></span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-row form-row-date">
+                    <div class="form-holder form-holder-2">
+                      <label for="date" class="special-label">Date of the Meeting:</label>
+                      <select name="day" id="day">
+                        <option value="Day" disabled selected>Day</option>
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                      </select>
+                      <select name="month" id="month">
+                        <option value="Month" disabled selected>Month</option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
+                      <select name="year" id="year">
+                        <option value="Year" disabled selected>Year</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                      </select>
+                    </div>
+                  </div>
+
+                </div>
+                    </section>
+                    <!-- SECTION 2 -->
+                    <h2>
+                      <span class="step-icon"><i class="zmdi zmdi-receipt"></i></span>
+                      <span class="step-text">Tasks</span>
+                    </h2>
+                    <section>
+                        <div class="inner">
+                          <h3>Work hard and be kind and amazing things will happen.</h3>
+                          <div class="form-row">
+                            <div class="form-holder form-holder-2">
+                              <select name="username2" id="username2">
+                                <option value="Username" disabled selected>Username</option>
+                                <% for (let i=2; i<names.length; i++) {%>
+                                  <option value= <%= tags[i] %> > <%= names[i][0] %> </option>
+                                
+                                <%}%>
+                              </select>
+                            </div>
+                          </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <select name="position2" id="position2">
+                        <option value="Position" disabled selected>Position</option>
+                        <option value="MM">Media Member</option>
+                        <option value="SM">Sponsoring Member</option>
+                        <option value="TM">Training Member</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <select name="categoryT" id="categoryT">
+                        <option value="Category" disabled selected>Category</option>
+                        <option value="GD">Graphical Design</option>
+                        <option value="VE">Video Editing</option>
+                        <option value="RD">Redaction</option>
+                        <option value="SO">Sponsorship Outing</option>
+                        <option value="CT">Contacting Trainers</option>
+                      </select>
+                    </div>
+                    <div class="form-holder form-holder-2">
+                      <label class="form-row-inner">
+                        <input type="text" class="form-control" id="categoryTS" name="categoryTS" required>
+                        <span class="label">Other Category</span>
+                        <span class="border"></span>
+                      </label>
+                    </div>
+                    <div class="form-holder form-holder-2">
+                      <select name="scoreT" id="scoreT">
+                        <option value="Score" disabled selected>Score</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <select name="early" id="early">
+                        <option value="Early" disabled selected>Hand in Task Early</option>
+                        <option value="T">True</option>
+                        <option value="F">False</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-holder form-holder-2">
+                      <select name="style2" id="style2">
+                        <option value="Style" disabled selected>Style</option>
+                        <option value="T">True</option>
+                        <option value="F">False</option>
+                      </select>
+                    </div>
+                    <div class="form-holder">
+                      <label class="form-row-inner">
+                        <input type="text" class="form-control" id="styleD2" name="styleD2" required>
+                        <span class="label">Style Description</span>
+                          <span class="border"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- SECTION 3 -->
+              <h2>
+                <span class="step-icon"><i class="zmdi zmdi-lock"></i></span>
+                <span class="step-text">Justification</span>
+              </h2>
+              <section>
+                  <div class="inner">
+                    <h3>He that is good for making excuses is seldom good for anything else.</h3>
+                    <div class="form-row">
+                      <div class="form-holder form-holder-2">
+                        <select name="username3" id="username3">
+                          <option value="Username" disabled selected>Username</option>
+                          <% for (let i=2; i<names.length; i++) {%>
+                            <option value= <%= tags[i] %> > <%= names[i][0] %> </option>
+                          <%}%>
+                        </select>
+                      </div>
+                      <div class="form-holder form-holder-2">
+                        <select name="date3" id="date3">
+                          <option value="Dates" disabled selected>Date of the Meeting</option>
+                          <% for (let i=0; i<dates.length; i++) {%>
+                            <option value= <%= datetags[i] %> > <%= dates[i] %> </option>
+                          <%}%>
+                        </select>
+                      </div>
+                    </div>
+                </div>
+            </section>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.steps.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

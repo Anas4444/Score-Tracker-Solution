@@ -1,0 +1,41 @@
+# fly.toml file generated for fsnscoretrackersolution on 2022-10-30T12:56:15+01:00
+
+app = "fsnscoretrackersolution"
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[build]
+  image = "anas4444/fsnscoretracker:alpine"
+
+[env]
+  SESSION_SECRET = "dhahjkjklregekjjdocgvhfdz5245949r5g4f98n456tr4j4hr5e4bzdfaefdafznjklgjjlkejrbkvl,be484475498"
+[experimental]
+  allowed_public_ports = []
+  auto_rollback = true
+
+[[services]]
+  http_checks = []
+  internal_port = 8070
+  processes = ["app"]
+  protocol = "tcp"
+  script_checks = []
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    force_https = true
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [[services.tcp_checks]]
+    grace_period = "1s"
+    interval = "15s"
+    restart_limit = 0
+    timeout = "2s"
